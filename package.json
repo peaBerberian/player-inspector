@@ -1,0 +1,21 @@
+{
+  "name": "player-inspector",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:all": "npm run bundle:all && npm run build:lib",
+    "bundle:all": "npm run bundle:canvas && npm run bundle:mocks",
+    "bundle:canvas": "rollup -c rollup.config.js --input src/exports/iife-canvas.ts --configOutput dist/bundle-canvas.js",
+    "bundle:mocks": "rollup -c rollup.config.js --input src/exports/iife-mocks.ts --configOutput dist/bundle-mocks.js",
+    "build:lib": "./build.sh"
+  },
+  "author": "Paul Berberian",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "8.2.5",
+    "rollup": "2.56.3",
+    "typescript": "4.4.3"
+  }
+}
